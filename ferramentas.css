@@ -1,0 +1,558 @@
+/* robos.css - Estilos específicos para a página de Robôs/Algoritmos */
+
+/* ==========================================================================
+   SEÇÃO HERO
+   ========================================================================== */
+
+.robots-hero {
+  padding: calc(var(--header-height) + 50px) 0 100px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)), 
+              url('assets/robots-bg.jpg') no-repeat center/cover;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.robots-hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.robots-hero .section-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   SELETOR DE PERFIL
+   ========================================================================== */
+
+.profile-selector {
+  background-color: var(--bg-tertiary);
+  padding: 40px 0;
+  position: relative;
+}
+
+.profile-selector::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.profile-tab {
+  padding: 12px 30px;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  box-shadow: var(--box-shadow);
+}
+
+.profile-tab:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.profile-tab.active {
+  background-color: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   CARDS DE ROBÔS
+   ========================================================================== */
+
+.robots {
+  padding: 80px 0;
+  background-color: var(--bg-primary);
+}
+
+.robots h2 {
+  margin-bottom: 40px;
+}
+
+.robot-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.profile-card {
+  display: none;
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+  border: 1px solid var(--bg-tertiary);
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card.featured {
+  border: 2px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.card-badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: var(--accent);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.price .small-text {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 5px;
+}
+
+.card p {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.card-features li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.card-features i {
+  color: var(--accent);
+  margin-top: 3px;
+  font-size: 0.9rem;
+}
+
+.btn-card {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  background-color: var(--accent);
+  color: var(--black);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 2px solid var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.btn-card:hover {
+  background-color: transparent;
+  color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* ==========================================================================
+   LOGOS DE INTEGRAÇÃO
+   ========================================================================== */
+
+.integration-logos {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px 0;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--border-radius);
+}
+
+.integration-logos p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.logos-container img {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: var(--transition);
+  height: 40px;
+  width: auto;
+}
+
+.logos-container img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   SEÇÃO DE PERFORMANCE
+   ========================================================================== */
+
+.performance {
+  padding: 80px 0;
+  background-color: var(--bg-tertiary);
+  text-align: center;
+}
+
+.performance h2 {
+  margin-bottom: 40px;
+}
+
+.performance-chart {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--bg-tertiary);
+}
+
+.performance-chart img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.performance-chart:hover img {
+  transform: scale(1.02);
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   TABELA DE COMPARAÇÃO
+   ========================================================================== */
+
+.comparison {
+  padding: 80px 0;
+  text-align: center;
+  background-color: var(--bg-primary);
+}
+
+.comparison h2 {
+  margin-bottom: 40px;
+}
+
+.comparison-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.comparison-table th {
+  background-color: var(--accent);
+  color: var(--black);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: rgba(255, 215, 0, 0.05);
+}
+
+.comparison-table tr:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.comparison-table td:first-child {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   DEPOIMENTOS
+   ========================================================================== */
+
+.testimonials {
+  padding: 80px 0;
+  background-color: var(--bg-tertiary);
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 40px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  text-align: left;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--bg-tertiary);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.testimonial-header img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--accent);
+}
+
+.testimonial-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.testimonial-header p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.stars {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: var(--text-primary);
+  position: relative;
+  padding-left: 20px;
+}
+
+.testimonial-card p::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 2rem;
+  color: var(--accent);
+  opacity: 0.3;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .robots-hero h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .robot-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .comparison-table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .robots-hero {
+    padding: calc(var(--header-height) + 30px) 0 80px;
+  }
+  
+  .robots-hero h1 {
+    font-size: 2.4rem;
+  }
+  
+  .robots-hero .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .profile-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .profile-tab {
+    width: 100%;
+  }
+  
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .testimonial-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .testimonial-header img {
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-header div {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .robots-hero {
+    padding: calc(var(--header-height) + 20px) 0 60px;
+  }
+  
+  .robots-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+  }
+  
+  .logos-container {
+    gap: 20px;
+  }
+  
+  .logos-container img {
+    height: 30px;
+  }
+}

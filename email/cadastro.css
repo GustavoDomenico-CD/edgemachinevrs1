@@ -1,0 +1,253 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA PÁGINA DE CADASTRO - LAYOUT CENTRALIZADO
+   ========================================================================== */
+
+.section-dark {
+  background-color: var(--bg-tertiary);
+  padding: 80px 0;
+  min-height: calc(100vh - var(--header-height) - 150px);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.content-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 0;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Formulário */
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group input {
+  padding: 15px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--bg-tertiary);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.form-text {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.checkbox-group label a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.checkbox-group label a:hover {
+  text-decoration: underline;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Rodapé do Formulário */
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-secondary);
+}
+
+.form-footer a {
+  color: var(--accent);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Seção de Benefícios */
+.benefits-card {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.benefits-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-primary);
+}
+
+.feature-list i {
+  color: var(--accent);
+  margin-top: 3px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Validação */
+input:invalid {
+  border-color: #ff6b6b;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: none;
+}
+
+input:invalid + .error-message {
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section-dark {
+    padding: 60px 0;
+  }
+  
+  .card {
+    padding: 25px;
+  }
+  
+  .benefits-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+  
+  .form-group input {
+    padding: 12px 15px;
+  }
+  
+  .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,111 @@
+/* ==========================================================================
+   ESTILOS PARA PÁGINA DE CONFIRMAÇÃO DE E-MAIL
+   ========================================================================== */
+
+.email-confirmation-card {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+
+.loading-state,
+.success-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-state,
+.error-state {
+  display: none;
+}
+
+.spinner {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.success-icon,
+.error-icon {
+  font-size: 5rem;
+  margin-bottom: 30px;
+}
+
+.success-icon {
+  color: var(--accent);
+  animation: bounce 1s ease infinite alternate;
+}
+
+.error-icon {
+  color: #ff6b6b;
+}
+
+@keyframes bounce {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.email-confirmation-card h2 {
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .email-confirmation-card {
+    padding: 40px 25px;
+  }
+  
+  .success-icon,
+  .error-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .email-confirmation-card {
+    padding: 30px 20px;
+  }
+  
+  .spinner {
+    font-size: 2.5rem;
+  }
+}

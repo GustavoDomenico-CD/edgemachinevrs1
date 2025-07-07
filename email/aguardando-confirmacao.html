@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDGE MACHINE | CONFIRME SEU E-MAIL</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .verification-container {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 40px;
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    .verification-icon {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    .resend-box {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: var(--bg-tertiary);
+      border-radius: var(--border-radius);
+    }
+    #countdown {
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .support-link {
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    .support-link a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .support-link a:hover {
+      text-decoration: underline;
+    }
+    .notification {
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      animation: fadeIn 0.3s ease-out;
+      display: none;
+    }
+    .notification.success {
+      background-color: rgba(40, 167, 69, 0.2);
+      border-left: 4px solid #28a745;
+      color: var(--text-primary);
+    }
+    .notification.error {
+      background-color: rgba(220, 53, 69, 0.2);
+      border-left: 4px solid #dc3545;
+      color: var(--text-primary);
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html"><img src="logohorizontal.png" alt="EDGE MACHINE Logo" width="220" height="60"></a>
+      </div>
+      
+      <nav class="desktop-menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="robos.html">Robôs/Algoritmos</a></li>
+          <li><a href="ebook.html">eBook</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-button" aria-expanded="false" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="mobile-menu" aria-label="Navegação mobile">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="robos.html">Robôs/Algoritmos</a></li>
+            <li><a href="ebook.html">eBook</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="login.html" class="btn btn-outline">Login</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="verification-container">
+      <div id="notification" class="notification"></div>
+      
+      <div class="verification-icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <h2>Confirme seu e-mail</h2>
+      <p>Enviamos um link de confirmação para <strong id="user-email">user@example.com</strong></p>
+      <p>Clique no link recebido para ativar sua conta e acessar a plataforma.</p>
+      
+      <div class="resend-box">
+        <p>Não recebeu o e-mail? Verifique sua caixa de spam ou</p>
+        <button id="resend-btn" class="btn btn-outline" disabled>
+          Reenviar e-mail <span id="countdown">(120)</span>
+        </button>
+      </div>
+      
+      <div class="support-link">
+        <p>Problemas com a verificação? <a href="contato.html">Contate nosso suporte</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="logohorizontal.png" alt="EDGE MACHINE Logo">
+          <p>O futuro do seu trade começa agora</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/edgmachine/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20site%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="robos.html">Robôs/Algoritmos</a></li>
+            <li><a href="ebook.html">eBook</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i><a href="mailto:edgemachine@outlook.com">edgemachine@outlook.com</a></li>
+            <li><i class="fas fa-phone"></i><a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp">+55 (71) 98484-0951</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EDGE MACHINE. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="termos-de-servico.html">Termos de Serviço</a>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+          <a href="disclaimer.html">Isenção de Responsabilidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="auth-system.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Inicializa o EmailJS com sua chave pública
+    emailjs.init('sALMhFfzRDWUfhevU');
+    
+    // Mostra o e-mail do usuário
+    const userEmail = localStorage.getItem('registeredEmail') || 'seu e-mail';
+    document.getElementById('user-email').textContent = userEmail;
+    
+    // Contagem regressiva para reenvio
+    let seconds = 120;
+    let countdownInterval;
+    
+    function startCountdown() {
+      clearInterval(countdownInterval);
+      seconds = 120;
+      const countdownElement = document.getElementById('countdown');
+      const resendBtn = document.getElementById('resend-btn');
+      
+      countdownInterval = setInterval(() => {
+        seconds--;
+        countdownElement.textContent = `(${seconds})`;
+        
+        if (seconds <= 0) {
+          clearInterval(countdownInterval);
+          resendBtn.disabled = false;
+          countdownElement.textContent = '';
+        }
+      }, 1000);
+    }
+    
+    // Reenvio do e-mail
+    document.getElementById('resend-btn').addEventListener('click', async function() {
+      const notification = document.getElementById('notification');
+      this.disabled = true;
+      this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      
+      try {
+        const email = localStorage.getItem('registeredEmail');
+        const token = localStorage.getItem('verificationToken') || '';
+        
+        // Envia o e-mail via EmailJS
+        await emailjs.send('confirmação email', 'e-mail de confirmação', {
+          name: 'Usuário EDGE',
+          email: email,
+          verification_link: `${window.location.origin}/validacao-cadastro.html?token=${token}`
+        });
+        
+        // Mostra notificação de sucesso
+        notification.textContent = 'Novo e-mail de confirmação enviado com sucesso!';
+        notification.className = 'notification success';
+        notification.style.display = 'block';
+        
+        // Reinicia o contador
+        startCountdown();
+        
+      } catch (error) {
+        console.error('Erro ao reenviar e-mail:', error);
+        notification.textContent = 'Erro ao reenviar e-mail. Tente novamente mais tarde.';
+        notification.className = 'notification error';
+        notification.style.display = 'block';
+      } finally {
+        this.innerHTML = 'Reenviar e-mail';
+        
+        // Esconde a notificação após 5 segundos
+        setTimeout(() => {
+          notification.style.display = 'none';
+        }, 5000);
+      }
+    });
+    
+    // Inicia o contador quando a página carrega
+    startCountdown();
+    
+    // Verifica se o e-mail já foi confirmado
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.AuthSystem && window.AuthSystem.isVerified()) {
+        window.location.href = 'usuario.html';
+      }
+    });
+  </script>
+</body>
+</html>

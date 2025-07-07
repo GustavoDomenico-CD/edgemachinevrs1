@@ -1,0 +1,10 @@
+  <!-- Elementos flutuantes -->
+  <div class="theme-float">
+    <button id="theme-toggle" aria-label="Alternar tema claro/escuro">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <button id="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>

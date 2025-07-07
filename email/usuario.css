@@ -1,0 +1,173 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA PÁGINA DE USUÁRIO
+   ========================================================================== */
+
+.user-settings {
+  padding: calc(var(--header-height) + 50px) 0 100px;
+  background-color: var(--bg-primary);
+}
+
+.user-settings h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.user-settings h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent);
+  margin: 15px auto 30px;
+}
+
+.user-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.user-avatar-initials {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+#change-avatar-btn {
+  margin-top: 15px;
+}
+
+/* Estilos do formulário */
+#userForm {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+#userForm fieldset {
+  border: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+#userForm legend {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-tertiary);
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--bg-tertiary);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-input-container input {
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 5px;
+  transition: var(--transition);
+}
+
+.toggle-password:hover {
+  color: var(--accent);
+}
+
+.password-hint {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .user-settings {
+    padding: calc(var(--header-height) + 30px) 0 80px;
+  }
+  
+  #userForm {
+    padding: 30px 20px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-settings h1 {
+    font-size: 2.4rem;
+  }
+  
+  .user-avatar-initials {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+}

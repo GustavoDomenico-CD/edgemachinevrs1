@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastre-se na EdgeMachine para acessar robôs de trading automatizados, conteúdos exclusivos e ferramentas avançadas.">
+  <title>EDGE MACHINE | CADASTRO</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .password-strength-container {
+      margin-top: 5px;
+    }
+    
+    #password-strength {
+      height: 4px;
+      width: 0%;
+      background-color: #f44336;
+      border-radius: 2px;
+      transition: width 0.3s, background-color 0.3s;
+    }
+    
+    #strength-text {
+      font-size: 0.8rem;
+      margin-top: 3px;
+      color: var(--text-secondary);
+    }
+    
+    .form-group {
+      position: relative;
+    }
+    
+    .password-toggle {
+      position: absolute;
+      right: 10px;
+      top: 35px;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+    
+    .form-text {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .card {
+      animation: fadeIn 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html"><img src="logohorizontal.png" alt="EDGE MACHINE Logo" width="220" height="60"></a>
+      </div>
+      
+      <nav class="desktop-menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="robos.html">Robôs/Algoritmos</a></li>
+          <li><a href="ebook.html">eBook</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li class="nav-login-item"><a href="login.html">Login</a></li>
+          <li class="nav-profile-item" style="display: none;">
+            <a href="usuario.html">
+              <i class="fas fa-user-circle"></i> <span class="username-display"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-button" aria-expanded="false" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="mobile-menu" aria-label="Navegação mobile">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="robos.html">Robôs/Algoritmos</a></li>
+          <li><a href="ebook.html">eBook</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li class="nav-login-item"><a href="login.html">Login</a></li>
+          <li class="nav-profile-item" style="display: none;">
+            <a href="usuario.html">
+              <i class="fas fa-user-circle"></i> Meu Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br><br><br>
+
+  <!-- Seção de Cadastro -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="content-grid">
+        <div class="card">
+          <h2>Crie sua conta</h2>
+          <p class="section-subtitle">Junte-se à EDGE MACHINE e acesse robôs de trading automatizados, conteúdos exclusivos e ferramentas avançadas.</p>
+          
+          <form id="cadastro-form" class="form-cadastro">
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required placeholder="Digite seu melhor e-mail">
+            </div>
+            
+            <div class="form-group">
+              <label for="telefone">Telefone (WhatsApp)</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+            
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <div class="password-input-container">
+                <input type="password" id="senha" name="senha" required placeholder="Crie uma senha segura" minlength="8">
+                <button type="button" class="password-toggle" aria-label="Mostrar senha">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="password-strength-container">
+                <div id="password-strength"></div>
+                <span id="strength-text"></span>
+              </div>
+              <small class="form-text">Mínimo de 8 caracteres, incluindo números e letras</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="confirmar-senha">Confirmar Senha</label>
+              <div class="password-input-container">
+                <input type="password" id="confirmar-senha" name="confirmar-senha" required placeholder="Confirme sua senha">
+                <button type="button" class="password-toggle" aria-label="Mostrar senha">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="termos" name="termos" required>
+              <label for="termos">Li e aceito os <a href="termos-de-servico.html" target="_blank">Termos de Serviço</a>, <a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a> e <a href="disclaimer.html">Isenção de Responsabilidade</a>.</label>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="newsletter" name="newsletter" checked>
+              <label for="newsletter">Desejo receber newsletters e atualizações por e-mail</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Criar Conta <i class="fas fa-user-plus"></i></button>
+            
+            <div class="form-footer">
+              <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+            </div>
+          </form>
+        </div>
+        
+        <div class="card benefits-card">
+          <h3>Benefícios Exclusivos</h3>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle accent"></i> Acesso a robôs de trading automatizados</li>
+            <li><i class="fas fa-check-circle accent"></i> Conteúdos educativos exclusivos</li>
+            <li><i class="fas fa-check-circle accent"></i> Relatórios de performance detalhados</li>
+            <li><i class="fas fa-check-circle accent"></i> Suporte prioritário</li>
+            <li><i class="fas fa-check-circle accent"></i> Comunidade de traders</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="logohorizontal.png" alt="EDGE MACHINE Logo">
+          <p>O futuro do seu trade começa agora</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/edgmachine/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20site%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="robos.html">Robôs/Algoritmos</a></li>
+            <li><a href="ebook.html">eBook</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i><a href="mailto:edgemachine@outlook.com">edgemachine@outlook.com</a></li>
+            <li><i class="fas fa-phone"></i><a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp">+55 (71) 98484-0951</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EDGE MACHINE. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="termos-de-servico.html">Termos de Serviço</a>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+          <a href="disclaimer.html">Isenção de Responsabilidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="auth-system.js"></script>
+  <script src="cadastro.js"></script> <!-- Novo script específico para cadastro -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acesse sua conta EdgeMachine - Algoritmos de Day Trade automatizados com alta precisão.">
+  <title>EDGE MACHINE | LOGIN</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header/Navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html"><img src="logohorizontal.png" alt="EDGE MACHINE Logo" width="220" height="60"></a>
+      </div>
+      
+      <nav class="desktop-menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="robos.html">Robôs/Algoritmos</a></li>
+          <li><a href="ebook.html">eBook</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li class="nav-login-item"><a href="login.html">Login</a></li>
+          <li class="nav-profile-item" style="display: none;">
+            <a href="usuario.html">
+              <i class="fas fa-user-circle"></i> <span class="username-display"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-button" aria-expanded="false" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="mobile-menu" aria-label="Navegação mobile">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="robos.html">Robôs/Algoritmos</a></li>
+          <li><a href="ebook.html">eBook</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li class="nav-login-item"><a href="login.html">Login</a></li>
+          <li class="nav-profile-item" style="display: none;">
+            <a href="usuario.html">
+              <i class="fas fa-user-circle"></i> Meu Perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <h2>Acesse sua conta</h2>
+        <p>Entre para gerenciar seus robôs e acessar conteúdos exclusivos</p>
+      </div>
+      
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          <i class="fas fa-envelope input-icon"></i>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required placeholder="••••••••">
+          <i class="fas fa-lock input-icon"></i>
+          <button type="button" class="toggle-password" aria-label="Mostrar senha">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        
+        <div class="form-options">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Lembrar-me</label>
+          </div>
+          <a href="redefinicao-senha.html" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-login">
+          <i class="fas fa-sign-in-alt"></i> Entrar
+        </button>
+        
+        <div class="login-divider">
+          <span>ou</span>
+        </div>
+        
+        <a href="cadastro.html" class="btn btn-outline btn-register">
+          <i class="fas fa-user-plus"></i> Criar nova conta
+        </a>
+      </form>
+      
+      <div class="login-footer">
+        <p>Ao continuar, você concorda com nossos <a href="termos-de-servico.html">Termos de Serviço</a>, <a href="politica-de-privacidade.html">Política de Privacidade</a> e <a href="disclaimer.html">Isenção de Responsabilidade</a>.</p>
+      </div>
+    </div>
+    
+    <div class="login-features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Segurança</h3>
+        <p>Protegemos seus dados com criptografia de última geração e autenticação de dois fatores.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Dashboard Exclusivo</h3>
+        <p>Acesse relatórios detalhados, histórico de operações e performance dos seus robôs.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>Suporte Prioritário</h3>
+        <p>Clientes logados recebem atendimento prioritário de nossa equipe especializada.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="logohorizontal.png" alt="EDGE MACHINE Logo">
+          <p>O futuro do seu trade começa agora</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/edgmachine/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20site%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="robos.html">Robôs/Algoritmos</a></li>
+            <li><a href="ebook.html">eBook</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i><a href="mailto:edgemachine@outlook.com">edgemachine@outlook.com</a></li>
+            <li><i class="fas fa-phone"></i><a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp">+55 (71) 98484-0951</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EDGE MACHINE. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="termos-de-servico.html">Termos de Serviço</a>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+          <a href="disclaimer.html">Isenção de Responsabilidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="auth-system.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle para mostrar/ocultar senha
+      document.querySelector('.toggle-password').addEventListener('click', function() {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('fa-eye-slash');
+      });
+
+      // Formulário de login
+      document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        
+        try {
+          submitButton.disabled = true;
+          submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Entrando...';
+
+          const email = form.querySelector('#email').value;
+          const password = form.querySelector('#password').value;
+          const remember = form.querySelector('#remember').checked;
+
+          // Usa o AuthSystem para fazer login
+          const loginResult = await window.authSystem.login(email, password, remember);
+          
+          if (loginResult.success) {
+            window.showAlert('Login realizado com sucesso!', 'success');
+            
+            // Redireciona para a página original ou para o dashboard
+            const redirectUrl = new URLSearchParams(window.location.search).get('redirect') || loginResult.redirect;
+            setTimeout(() => {
+              window.location.href = redirectUrl || 'usuario.html';
+            }, 1000);
+          } else {
+            throw new Error(loginResult.message || 'E-mail ou senha incorretos');
+          }
+        } catch (error) {
+          window.showAlert(error.message, 'error');
+          console.error('Erro no login:', error);
+        } finally {
+          submitButton.disabled = false;
+          submitButton.innerHTML = '<i class="fas fa-sign-in-alt"></i> Entrar';
+        }
+      });
+
+      // Verifica se há parâmetro de redirecionamento
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('redirect')) {
+        window.showAlert('Por favor, faça login para acessar esta página', 'error');
+      }
+    });
+  </script>
+</body>
+</html>

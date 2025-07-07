@@ -1,0 +1,233 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA PÁGINA DE AFILIADOS
+   ========================================================================== */
+
+/* Seção Hero Afiliados */
+.affiliate-hero {
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  padding: calc(var(--header-height) + 80px) 0 100px;
+  text-align: center;
+  position: relative;
+}
+
+/* Estatísticas Afiliados */
+.affiliate-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px auto;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.stat-card {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  min-width: 200px;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+/* Estrutura de Comissões */
+.commission-structure {
+  background-color: var(--bg-tertiary);
+  padding: 60px 0;
+}
+
+.commission-table {
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.commission-table th, 
+.commission-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.commission-table th {
+  background-color: rgba(255, 215, 0, 0.1);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.commission-table tr:last-child td {
+  border-bottom: none;
+}
+
+.highlight-cell {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Passos para Afiliados */
+.affiliate-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.step-card {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: var(--transition);
+  position: relative;
+  padding-top: 50px;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background-color: var(--accent);
+  color: var(--black);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+}
+
+/* CTA Afiliados */
+.affiliate-cta {
+  text-align: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  position: relative;
+}
+
+.affiliate-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/dots-pattern.png') repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.affiliate-cta .container {
+  position: relative;
+  z-index: 1;
+}
+
+.affiliate-form {
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.affiliate-form label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.affiliate-form input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .affiliate-stats {
+    gap: 20px;
+  }
+  
+  .stat-card {
+    min-width: 160px;
+    padding: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .affiliate-hero {
+    padding: calc(var(--header-height) + 50px) 0 80px;
+  }
+  
+  .affiliate-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .stat-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .commission-table {
+    font-size: 0.9rem;
+  }
+  
+  .commission-table th, 
+  .commission-table td {
+    padding: 10px 15px;
+  }
+  
+  .affiliate-form {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .affiliate-hero {
+    padding: calc(var(--header-height) + 30px) 0 60px;
+  }
+  
+  .step-card {
+    padding: 25px 20px 25px 20px;
+    padding-top: 40px;
+  }
+  
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .affiliate-form {
+    padding: 25px 15px;
+  }
+}

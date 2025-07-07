@@ -1,0 +1,233 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA PÁGINAS DE QUIZ
+   ========================================================================== */
+
+/* Hero do quiz */
+.quiz-hero {
+  padding: calc(var(--header-height) + 50px) 0 80px;
+  text-align: center;
+  background-color: var(--bg-tertiary);
+}
+
+.quiz-hero h1 {
+  max-width: 900px;
+  margin: 0 auto 15px;
+}
+
+.quiz-hero .section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+}
+
+/* Navegação do quiz */
+.quiz-navigation {
+  margin-bottom: 30px;
+}
+
+.quiz-info {
+  background-color: var(--bg-secondary);
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 30px;
+  border-left: 4px solid var(--accent);
+}
+
+.quiz-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+/* Conteúdo do quiz */
+.quiz-content {
+  padding: 60px 0;
+}
+
+.quiz-question {
+  background-color: var(--bg-secondary);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  margin-bottom: 25px;
+  box-shadow: var(--box-shadow);
+}
+
+.quiz-question h3 {
+  margin-bottom: 20px;
+  color: var(--accent-light);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background-color: var(--bg-tertiary);
+}
+
+.option:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-secondary);
+  border-radius: 50%;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+
+.option input[type="radio"]:checked {
+  border-color: var(--accent);
+  background-color: var(--accent);
+}
+
+.option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--black);
+  border-radius: 50%;
+}
+
+.option-text {
+  flex: 1;
+}
+
+.quiz-question textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--bg-tertiary);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.quiz-question textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.quiz-submit {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Modal de resultado */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.close-modal:hover {
+  color: var(--accent);
+}
+
+#result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#result-message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#result-score {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+#result-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .quiz-hero {
+    padding: calc(var(--header-height) + 30px) 0 60px;
+  }
+  
+  .modal-content {
+    margin: 20% auto;
+    width: 90%;
+  }
+  
+  #result-actions {
+    flex-direction: column;
+  }
+  
+  #result-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .quiz-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .quiz-hero .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .quiz-question {
+    padding: 20px 15px;
+  }
+  
+  .option {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,742 @@
+/* ebookespecifico.css - Estilos para a página de ebook específico */
+
+/* ==========================================================================
+   VARIÁVEIS E ESTILOS BASE
+   ========================================================================== */
+:root {
+  /* Herda as variáveis do index.css */
+  --bg-primary: #000000;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1E1E1E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --accent: #FFD700;
+  --accent-light: #FFE44D;
+  --accent-dark: #D4AF37;
+  --bg-gradient-start: #000000;
+  --bg-gradient-end: #121212;
+  --header-height: 100px;
+  --mobile-header-height: 70px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   SEÇÃO HERO DO CATÁLOGO
+   ========================================================================== */
+.catalog-hero {
+  padding: calc(var(--header-height) + 80px) 0 100px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%), 
+              url('assets/ebook-bg.jpg') no-repeat center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.catalog-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.catalog-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.catalog-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   SEÇÃO DE INFORMAÇÕES DE ACESSO
+   ========================================================================== */
+.access-info {
+  padding: 60px 0;
+  background-color: var(--bg-tertiary);
+  position: relative;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.info-box i {
+  font-size: 3rem;
+  color: var(--accent);
+  min-width: 60px;
+}
+
+.info-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.info-box p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   EBOOK EM DESTAQUE
+   ========================================================================== */
+.featured-ebook {
+  padding: 80px 0;
+  background-color: var(--bg-primary);
+}
+
+.featured-content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-image {
+  flex: 1;
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.featured-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.2);
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.featured-image:hover img {
+  transform: scale(1.03);
+}
+
+.ebook-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  z-index: 1;
+  font-size: 0.9rem;
+}
+
+.featured-text {
+  flex: 1;
+}
+
+.ebook-description {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.ebook-stats {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.stat i {
+  color: var(--accent);
+}
+
+.access-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* ==========================================================================
+   CAPÍTULOS DO EBOOK
+   ========================================================================== */
+.ebook-chapters {
+  padding: 80px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.ebook-chapters::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  opacity: 0.3;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.chapter-card {
+  background-color: var(--bg-tertiary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.chapter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+}
+
+.chapter-number {
+  background-color: var(--accent);
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.chapter-content {
+  padding: 25px;
+  flex: 1;
+}
+
+.chapter-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.chapter-content p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.chapter-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.chapter-meta i {
+  color: var(--accent);
+  margin-right: 5px;
+}
+
+/* ==========================================================================
+   CATÁLOGO DE EBOOKS
+   ========================================================================== */
+.ebook-catalog {
+  padding: 80px 0;
+  background-color: var(--bg-primary);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.ebook-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.ebook-card.highlight {
+  border: 2px solid var(--accent);
+}
+
+.ebook-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.ebook-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.ebook-image {
+  height: auto;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ebook-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.ebook-card:hover .ebook-image img {
+  transform: scale(1.05);
+}
+
+.ebook-info {
+  padding: 20px;
+}
+
+.ebook-category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ebook-category.beginner {
+  background-color: rgba(0, 128, 0, 0.2);
+  color: lightgreen;
+}
+
+.ebook-category.intermediate {
+  background-color: rgba(255, 165, 0, 0.2);
+  color: orange;
+}
+
+.ebook-category.advanced {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: lightcoral;
+}
+
+.ebook-category.algorithms {
+  background-color: rgba(0, 0, 255, 0.2);
+  color: lightblue;
+}
+
+.ebook-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.ebook-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.ebook-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.ebook-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ebook-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cta-faq {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* ==========================================================================
+   VANTAGENS DA PLATAFORMA
+   ========================================================================== */
+.platform-features {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  position: relative;
+}
+
+.platform-features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/dots-pattern.png') repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.platform-features .container {
+  position: relative;
+  z-index: 1;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.feature {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.15);
+}
+
+.feature i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--black);
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--black);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .catalog-hero h1 {
+    font-size: 3rem;
+  }
+  
+  .featured-content {
+    gap: 40px;
+  }
+  
+  .info-box h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .featured-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .featured-image {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .info-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+  
+  .info-box i {
+    margin-bottom: 15px;
+  }
+  
+  .access-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-primary, 
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: var(--mobile-header-height);
+  }
+  
+  .catalog-hero {
+    padding: calc(var(--header-height) + 50px) 0 80px;
+  }
+  
+  .catalog-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .chapters-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chapter-card {
+    flex-direction: column;
+  }
+  
+  .chapter-number {
+    min-width: 100%;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  .chapter-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .feature {
+    padding: 25px 20px;
+  }
+  
+  .feature h3 {
+    font-size: 1.2rem;
+  }
+  
+  .ebook-stats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .stat {
+    flex: 1 1 45%;
+  }
+  
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .catalog-hero {
+    padding: calc(var(--header-height) + 30px) 0 60px;
+  }
+  
+  .catalog-hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .ebook-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+  
+  .stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    flex: 1 1 100%;
+  }
+  
+  .featured-ebook,
+  .ebook-chapters,
+  .platform-features,
+  .ebook-catalog {
+    padding: 60px 0;
+  }
+  
+  .chapter-content {
+    padding: 20px;
+  }
+  
+  .chapter-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .ebook-image {
+    min-height: 180px;
+  }
+  
+  .ebook-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .feature i {
+    font-size: 2rem;
+  }
+  
+  .info-box {
+    padding: 20px;
+  }
+  
+  .info-box h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .catalog-hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .featured-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .ebook-description {
+    font-size: 1rem;
+  }
+  
+  .access-buttons {
+    gap: 10px;
+  }
+  
+  .btn-primary,
+  .btn-outline {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+  
+  .chapter-number {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .feature {
+    padding: 20px 15px;
+  }
+  
+  .feature h3 {
+    font-size: 1.1rem;
+  }
+  
+  .feature p {
+    font-size: 0.9rem;
+  }
+}

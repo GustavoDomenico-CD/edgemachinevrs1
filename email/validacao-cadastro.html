@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDGE MACHINE | VALIDAÇÃO DE E-MAIL</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .email-confirmation-container {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 40px;
+      background-color: var(--bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .state-container {
+      display: none;
+    }
+    
+    .state-container.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .confirmation-icon {
+      font-size: 5rem;
+      margin-bottom: 20px;
+    }
+    
+    .loading-icon {
+      color: var(--accent);
+      animation: spin 1s linear infinite;
+    }
+    
+    .success-icon {
+      color: #4CAF50;
+      animation: bounce 0.5s ease;
+    }
+    
+    .error-icon {
+      color: #f44336;
+    }
+    
+    .confirmation-message {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+    
+    .confirmation-actions {
+      margin-top: 30px;
+    }
+    
+    .confirmation-actions .btn {
+      margin: 10px;
+    }
+    
+    .notification {
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+      display: none;
+    }
+    
+    .notification.success {
+      background-color: rgba(40, 167, 69, 0.2);
+      border-left: 4px solid #28a745;
+      color: var(--text-primary);
+    }
+    
+    .notification.error {
+      background-color: rgba(220, 53, 69, 0.2);
+      border-left: 4px solid #dc3545;
+      color: var(--text-primary);
+    }
+    
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      60% { transform: translateY(-10px); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) {
+      .email-confirmation-container {
+        margin: 50px auto;
+        padding: 20px;
+      }
+      
+      .confirmation-icon {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html"><img src="logohorizontal.png" alt="EDGE MACHINE Logo" width="220" height="60"></a>
+      </div>
+      
+      <nav class="desktop-menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="robos.html">Robôs/Algoritmos</a></li>
+          <li><a href="ebook.html">eBook</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-button" aria-expanded="false" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="mobile-menu" aria-label="Navegação mobile">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="robos.html">Robôs/Algoritmos</a></li>
+            <li><a href="ebook.html">eBook</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="login.html" class="btn btn-outline">Login</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="section section-dark">
+    <div class="container">
+      <div class="email-confirmation-container">
+        <div id="notification" class="notification"></div>
+        
+        <!-- Estado de Carregamento -->
+        <div id="loading-state" class="state-container active">
+          <div class="confirmation-icon">
+            <i class="fas fa-spinner loading-icon"></i>
+          </div>
+          <h2>Validando seu e-mail...</h2>
+          <p class="confirmation-message">Aguarde enquanto confirmamos sua conta.</p>
+        </div>
+        
+        <!-- Estado de Sucesso -->
+        <div id="success-state" class="state-container">
+          <div class="confirmation-icon">
+            <i class="fas fa-check-circle success-icon"></i>
+          </div>
+          <h2>E-mail confirmado com sucesso!</h2>
+          <p class="confirmation-message">Sua conta foi ativada e você já pode acessar todos os recursos da EDGE MACHINE.</p>
+          <div class="confirmation-actions">
+            <a href="usuario.html" class="btn btn-primary">Acessar Minha Conta</a>
+            <a href="robos.html" class="btn btn-outline">Conhecer os Robôs</a>
+          </div>
+        </div>
+        
+        <!-- Estado de Erro -->
+        <div id="error-state" class="state-container">
+          <div class="confirmation-icon">
+            <i class="fas fa-exclamation-circle error-icon"></i>
+          </div>
+          <h2>Problema na confirmação</h2>
+          <p id="error-message" class="confirmation-message">O link de confirmação é inválido ou expirou.</p>
+          <div class="confirmation-actions">
+            <button id="resend-button" class="btn btn-primary">Reenviar E-mail de Confirmação</button>
+            <a href="contato.html" class="btn btn-text">Precisa de ajuda?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="logohorizontal.png" alt="EDGE MACHINE Logo">
+          <p>O futuro do seu trade começa agora</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/edgmachine/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20site%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="robos.html">Robôs/Algoritmos</a></li>
+            <li><a href="ebook.html">eBook</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i><a href="mailto:edgemachine@outlook.com">edgemachine@outlook.com</a></li>
+            <li><i class="fas fa-phone"></i><a href="https://wa.me/5571984840951?text=Olá%2C%20vim%20do%20EdgeMachine%20e%20gostaria%20de%20mais%20informações!" target="_blank" aria-label="WhatsApp">+55 (71) 98484-0951</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EDGE MACHINE. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="termos-de-servico.html">Termos de Serviço</a>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+          <a href="disclaimer.html">Isenção de Responsabilidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="auth-system.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Elementos da página
+      const loadingState = document.getElementById('loading-state');
+      const successState = document.getElementById('success-state');
+      const errorState = document.getElementById('error-state');
+      const errorMessage = document.getElementById('error-message');
+      const resendButton = document.getElementById('resend-button');
+      const notification = document.getElementById('notification');
+      
+      // Função para alternar entre estados
+      function showState(state) {
+        loadingState.classList.remove('active');
+        successState.classList.remove('active');
+        errorState.classList.remove('active');
+        
+        if (state === 'loading') {
+          loadingState.classList.add('active');
+        } else if (state === 'success') {
+          successState.classList.add('active');
+        } else if (state === 'error') {
+          errorState.classList.add('active');
+        }
+      }
+      
+      // Função para validar o token
+      async function validateToken(token) {
+        try {
+          // Substitua por uma requisição real ao seu backend
+          const response = await fetch('/api/confirm-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ token })
+          });
+          
+          const data = await response.json();
+          
+          if (response.ok && data.valid) {
+            // Sucesso - conta confirmada
+            showState('success');
+            
+            // Atualiza o status no localStorage
+            if (window.AuthSystem) {
+              const userData = window.AuthSystem.getUserData();
+              if (userData) {
+                userData.verified = true;
+                localStorage.setItem('userData', JSON.stringify(userData));
+                window.dispatchEvent(new CustomEvent('authChange'));
+              }
+            }
+            
+            // Redireciona após 5 segundos
+            setTimeout(() => {
+              window.location.href = 'usuario.html';
+            }, 5000);
+          } else {
+            throw new Error(data.message || 'Token inválido ou expirado');
+          }
+        } catch (error) {
+          console.error('Erro na validação:', error);
+          showState('error');
+          errorMessage.textContent = error.message || 'Erro ao validar o token. Tente novamente mais tarde.';
+        }
+      }
+      
+      // Função para reenviar e-mail
+      async function resendConfirmationEmail() {
+        resendButton.disabled = true;
+        resendButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        
+        try {
+          const email = localStorage.getItem('registeredEmail');
+          
+          // Substitua por uma requisição real ao seu backend
+          const response = await fetch('/api/resend-verification', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+          });
+          
+          if (response.ok) {
+            notification.textContent = 'Novo e-mail de confirmação enviado com sucesso!';
+            notification.className = 'notification success';
+            notification.style.display = 'block';
+          } else {
+            throw new Error('Erro ao reenviar e-mail');
+          }
+        } catch (error) {
+          console.error('Erro ao reenviar e-mail:', error);
+          notification.textContent = error.message || 'Erro ao reenviar e-mail. Tente novamente mais tarde.';
+          notification.className = 'notification error';
+          notification.style.display = 'block';
+        } finally {
+          resendButton.disabled = false;
+          resendButton.textContent = 'Reenviar E-mail de Confirmação';
+          
+          // Esconde a notificação após 5 segundos
+          setTimeout(() => {
+            notification.style.display = 'none';
+          }, 5000);
+        }
+      }
+      
+      // Extrair token da URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      
+      // Iniciar validação
+      if (token) {
+        validateToken(token);
+      } else {
+        showState('error');
+        errorMessage.textContent = 'Link de confirmação inválido. Verifique se copiou o link completo.';
+      }
+      
+      // Configurar botão de reenvio
+      resendButton.addEventListener('click', resendConfirmationEmail);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário | EDGE MACHINE</title>
+    <meta name="description" content="Atualize suas informações pessoais e preferências na sua conta EDGE MACHINE.">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .user-settings {
+            padding: 40px 0;
+        }
+        
+        .user-avatar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .user-avatar-initials {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        fieldset {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        legend {
+            padding: 0 10px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .password-input-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+        
+        .password-hint {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .unverified-warning {
+            display: none;
+            background-color: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .form-actions .btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="logohorizontal.png" alt="EDGE MACHINE Logo"></a>
+            </div>
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="robos.html">Robôs/Algoritmos</a></li>
+                    <li><a href="ebook.html">eBook</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li class="nav-login-item" style="display: none;"><a href="login.html">Login</a></li>
+                    <li class="nav-profile-item">
+                        <a href="usuario.html">
+                            <i class="fas fa-user-circle"></i> <span class="username-display"></span>
+                        </a>
+                    </li>
+                    <li class="logout-btn">
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-expanded="false" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="mobile-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="robos.html">Robôs/Algoritmos</a></li>
+                    <li><a href="ebook.html">eBook</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li class="nav-login-item" style="display: none;"><a href="login.html">Login</a></li>
+                    <li class="nav-profile-item">
+                        <a href="usuario.html">
+                            <i class="fas fa-user-circle"></i> Meu Perfil
+                        </a>
+                    </li>
+                    <li class="logout-btn">
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo do Usuário -->
+    <section class="user-settings">
+        <div class="container">
+            <div class="unverified-warning">
+                <i class="fas fa-exclamation-circle"></i> Seu e-mail ainda não foi confirmado. 
+                <a href="#" id="resend-verification-link">Reenviar e-mail de confirmação</a>
+            </div>
+            
+            <h1>Meu Perfil</h1>
+            <div class="user-avatar">
+                <div class="user-avatar-initials"></div>
+                <button class="btn btn-outline" id="change-avatar-btn">Alterar Avatar</button>
+            </div>
+            <form id="userForm">
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                    <div class="form-group">
+                        <label for="fullname">Nome Completo</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Alterar Senha</legend>
+                    <div class="form-group">
+                        <label for="currentPassword">Senha Atual</label>
+                        <div class="password-input-container">
+                            <input type="password" id="currentPassword" name="currentPassword">
+                            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nova Senha</label>
+                        <div class="password-input-container">
+                            <input type="password" id="newPassword" name="newPassword">
+                            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <small class="password-hint">Mínimo de 8 caracteres, incluindo números e letras</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Nova Senha</label>
+                        <div class="password-input-container">
+                            <input type="password" id="confirmPassword" name="confirmPassword">
+                            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="logohorizontal.png" alt="EDGE MACHINE Logo">
+                    <p>O futuro do seu trade começa agora</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/edgmachine/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5571984840951" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="robos.html">Robôs/Algoritmos</a></li>
+                        <li><a href="ebook.html">eBook</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:edgemachine@outlook.com">edgemachine@outlook.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="https://wa.me/5571984840951">+55 (71) 98484-0951</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EDGE MACHINE. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="termos-de-servico.html">Termos de Serviço</a>
+                    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                    <a href="disclaimer.html">Isenção de Responsabilidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth-system.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carrega os dados do usuário
+            const userData = window.authSystem.getUserData();
+            
+            if (!userData) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Preenche o formulário com os dados do usuário
+            document.getElementById('fullname').value = userData.name || '';
+            document.getElementById('email').value = userData.email || '';
+            document.getElementById('phone').value = userData.phone || '';
+            
+            // Atualiza o avatar com as iniciais
+            const initials = userData.name ? 
+                userData.name.split(' ').map(n => n[0]).join('').substring(0, 2) : '';
+            document.querySelector('.user-avatar-initials').textContent = initials;
+
+            // Mostra aviso se e-mail não estiver verificado
+            if (!userData.verified) {
+                document.querySelector('.unverified-warning').style.display = 'block';
+            }
+
+            // Configura o toggle para mostrar/ocultar senha
+            document.querySelectorAll('.toggle-password').forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('input');
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    this.querySelector('i').classList.toggle('fa-eye-slash');
+                });
+            });
+
+            // Máscara para telefone
+            document.getElementById('phone').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 11) value = value.substring(0, 11);
+                
+                if (value.length > 0) {
+                    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                    value = value.length > 10 ? 
+                        value.replace(/(\d)(\d{4})$/, '$1-$2') : 
+                        value.replace(/(\d)(\d{3})$/, '$1-$2');
+                }
+                
+                e.target.value = value;
+            });
+
+            // Reenvio de e-mail de verificação
+            document.getElementById('resend-verification-link')?.addEventListener('click', async function(e) {
+                e.preventDefault();
+                const email = userData.email;
+                
+                try {
+                    const success = await window.authSystem.resendVerificationEmail(email);
+                    if (success) {
+                        window.showAlert('E-mail de verificação reenviado com sucesso!', 'success');
+                    } else {
+                        throw new Error('Falha no reenvio');
+                    }
+                } catch (error) {
+                    window.showAlert('Erro ao reenviar e-mail: ' + error.message, 'error');
+                }
+            });
+
+            // Formulário de atualização
+            document.getElementById('userForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const submitButton = form.querySelector('button[type="submit"]');
+                
+                try {
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Salvando...';
+
+                    const formData = {
+                        name: document.getElementById('fullname').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.replace(/\D/g, '')
+                    };
+
+                    // Validação de e-mail
+                    if (!window.authSystem.validateEmail(formData.email)) {
+                        throw new Error('Por favor, insira um e-mail válido');
+                    }
+
+                    // Se senha foi fornecida, valida
+                    const currentPassword = document.getElementById('currentPassword').value;
+                    const newPassword = document.getElementById('newPassword').value;
+                    const confirmPassword = document.getElementById('confirmPassword').value;
+                    
+                    if (currentPassword && newPassword) {
+                        if (newPassword !== confirmPassword) {
+                            throw new Error('As senhas não coincidem');
+                        }
+                        
+                        const validation = window.authSystem.validatePassword(newPassword);
+                        if (!validation.isValid) {
+                            throw new Error('A senha deve conter pelo menos 8 caracteres, uma letra maiúscula e um número');
+                        }
+                        
+                        formData.currentPassword = currentPassword;
+                        formData.newPassword = newPassword;
+                    }
+
+                    // Simulação de atualização - substituir por chamada real ao backend
+                    const response = await window.authSystem.mockApiRequest('/update-profile', formData);
+                    
+                    if (response.success) {
+                        // Atualiza dados locais
+                        Object.assign(userData, formData);
+                        localStorage.setItem('userData', JSON.stringify(userData));
+                        
+                        // Atualiza a UI
+                        document.querySelectorAll('.username-display').forEach(el => {
+                            el.textContent = userData.name.split(' ')[0];
+                        });
+                        
+                        const initials = userData.name.split(' ').map(n => n[0]).join('').substring(0, 2);
+                        document.querySelector('.user-avatar-initials').textContent = initials;
+                        
+                        window.showAlert('Perfil atualizado com sucesso!', 'success');
+                    } else {
+                        throw new Error(response.message || 'Erro ao atualizar perfil');
+                    }
+                } catch (error) {
+                    window.showAlert(error.message, 'error');
+                    console.error('Erro ao atualizar perfil:', error);
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Salvar Alterações';
+                }
+            });
+
+            // Botão para alterar avatar (simulação)
+            document.getElementById('change-avatar-btn')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.showAlert('Funcionalidade de alteração de avatar em desenvolvimento', 'error');
+            });
+        });
+    </script>
+</body>
+</html>

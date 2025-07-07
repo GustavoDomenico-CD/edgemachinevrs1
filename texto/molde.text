@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EdgeMachine - Algoritmos de Day Trade automatizados com alta precisão. Robôs operacionais 24/7 e ebook gratuito para iniciantes.">
+  <meta name="keywords" content="day trade, algoritmos, robôs de trade, trading automatizado, mercado financeiro">
+  <title>EDGE MACHINE | Algoritmos de Day Trade Automatizados</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="logohorizontal.png" as="image">
+</head>
+<body>
+  <!-- Header/Navegação -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="logohorizontal.png" alt="EDGE MACHINE Logo - Algoritmos de Day Trade" width="220" height="60">
+      </div>
+      
+      <!-- Menu Desktop -->
+      <nav class="desktop-menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#robos">Robôs/Algoritmos</a></li>
+          <li><a href="#ebook">Ebook</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://github.com/gustavodomenico-cd/edgemachine" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Menu Mobile -->
+      <button class="mobile-menu-button" aria-expanded="false" aria-label="Menu mobile">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="mobile-menu" aria-label="Navegação mobile">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#robos">Robôs/Algoritmos</a></li>
+          <li><a href="#ebook">Ebook</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://github.com/gustavodomenico-cd/edgemachine" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Algoritmos de Day Trade com <span class="accent">Precisão Científica</span></h1>
+      <p>Opere 24/7 com robôs automatizados baseados em análise de dados e inteligência de mercado. Receba nosso ebook gratuito para iniciantes.</p>
+      <div class="cta-buttons">
+        <a href="#robos" class="btn-primary">Conheça Nossos Robôs</a>
+        <a href="#ebook" class="btn-secondary">Baixar Ebook Gratuito</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">85%+</span>
+          <span class="stat-label">Taxa de acerto</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Operação</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Automatizado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section id="sobre" class="about">
+    <div class="container">
+      <h2>Por Que a <span class="accent">EDGE MACHINE</span>?</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Desenvolvemos algoritmos de trading baseados em análise quantitativa e backtesting rigoroso, garantindo estratégias lucrativas no mercado financeiro. Nossa abordagem combina:</p>
+          <ul>
+            <li><i class="fas fa-check accent"></i> Análise técnica avançada</li>
+            <li><i class="fas fa-check accent"></i> Machine learning aplicado</li>
+            <li><i class="fas fa-check accent"></i> Gestão inteligente de risco</li>
+          </ul>
+          <a href="#robos" class="btn-outline">Ver Demonstração</a>
+        </div>
+        <div class="about-image">
+          <img src="trading-dashboard.png" alt="Dashboard EdgeMachine mostrando gráficos e estatísticas de trading" loading="lazy" width="600" height="400">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robôs/Algoritmos -->
+  <section id="robos" class="robots">
+    <div class="container">
+      <h2>Nossos <span class="accent">Robôs/Algoritmos</span></h2>
+      <p class="section-subtitle">Escolha a estratégia que melhor se adapta ao seu perfil de investimento</p>
+      
+      <div class="robot-cards">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-bolt accent"></i>
+          </div>
+          <h3>High Frequency</h3>
+          <p>Operações ultrarrápidas baseadas em volume e liquidez, com tempo médio de operação de 2-5 minutos.</p>
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> Ideal para mercados voláteis</li>
+            <li><i class="fas fa-check-circle"></i> Múltiplas operações diárias</li>
+            <li><i class="fas fa-check-circle"></i> Stop loss automático</li>
+          </ul>
+          <a href="#high-frequency-details" class="btn-card">OUTROS SIMILARES</a>
+        </div>
+        
+        <div class="card featured">
+          <div class="card-badge">Mais Popular</div>
+          <div class="card-icon">
+            <i class="fas fa-chart-line accent"></i>
+          </div>
+          <h3>Swing Trade</h3>
+          <p>Estratégias de médio prazo com filtro de notícias e análise fundamentalista integrada.</p>
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> Operações de 1-5 dias</li>
+            <li><i class="fas fa-check-circle"></i> Análise de sentimento</li>
+            <li><i class="fas fa-check-circle"></i> Baixa exposição ao mercado</li>
+          </ul>
+          <a href="#swing-trade-details" class="btn-card">OUTROS SIMILARES</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-robot accent"></i>
+          </div>
+          <h3>Automático Completo</h3>
+          <p>Solução plug-and-play: conecte à sua corretora e opere sem intervenção manual.</p>
+          <ul class="card-features">
+            <li><i class="fas fa-check-circle"></i> Configuração em 5 minutos</li>
+            <li><i class="fas fa-check-circle"></i> Suporte a 10+ corretoras</li>
+            <li><i class="fas fa-check-circle"></i> Relatórios diários</li>
+          </ul>
+          <a href="#auto-details" class="btn-card">OUTROS SIMILARES</a>
+        </div>
+      </div>
+      
+      <div class="integration-logos">
+        <p>Integração com as principais corretoras:</p>
+        <div class="logos-container">
+          <img src="corretora1.png" alt="Logo Corretora XP" loading="lazy" width="80" height="40">
+          <img src="corretora2.png" alt="Logo Corretora Clear" loading="lazy" width="80" height="40">
+          <img src="corretora3.png" alt="Logo Corretora Binance" loading="lazy" width="80" height="40">
+          <img src="corretora4.png" alt="Logo Corretora Interactive Brokers" loading="lazy" width="80" height="40">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ebook -->
+  <section id="ebook" class="ebook">
+    <div class="container">
+      <h2>Ebook <span class="accent">Grátis</span> para Iniciantes</h2>
+      <p class="section-subtitle">Domine os fundamentos do trading algorítmico em 7 dias</p>
+      
+      <div class="ebook-content">
+        <div class="ebook-text">
+          <h3>Fundamentos Para o Trader Iniciante</h3>
+          <p>Este guia prático inclui:</p>
+          <ul>
+            <li><i class="fas fa-check accent"></i> Conceitos básicos de trading algorítmico</li>
+            <li><i class="fas fa-check accent"></i> Como interpretar sinais dos robôs</li>
+            <li><i class="fas fa-check accent"></i> Gestão de risco para iniciantes</li>
+            <li><i class="fas fa-check accent"></i> Checklist para primeiras operações</li>
+          </ul>
+          
+          <form class="ebook-form">
+            <div class="form-group">
+              <input type="text" placeholder="Seu nome" required aria-label="Seu nome">
+              <input type="email" placeholder="Seu melhor e-mail" required aria-label="Seu e-mail">
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-download"></i> Baixar Agora
+            </button>
+            <p class="form-disclaimer">Prometemos não enviar spam. Você pode cancelar a qualquer momento.</p>
+          </form>
+        </div>
+        
+        <div class="ebook-image">
+          <img src="Fundamentos Para o Trader Iniciante.png" alt="Capa do Ebook Fundamentos Para o Trader Iniciante" loading="lazy" width="350" height="500">
+          <div class="ebook-badge">
+            <i class="fas fa-star"></i> 1.000+ downloads
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>O Que Dizem <span class="accent">Nossos Clientes</span></h2>
+      
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"O robô de Swing Trade mudou completamente meus resultados. Em 3 meses minha conta cresceu 42% com muito menos stress."</p>
+          <div class="testimonial-author">
+            <img src="client1.jpg" alt="Foto de Carlos Silva" loading="lazy" width="60" height="60">
+            <div>
+              <strong>Carlos Silva</strong>
+              <span>Trador há 2 anos</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>"Como iniciante, o ebook me deu a base que faltava. Agora entendo como os algoritmos funcionam e tomo melhores decisões."</p>
+          <div class="testimonial-author">
+            <img src="client2.jpg" alt="Foto de Ana Oliveira" loading="lazy" width="60" height="60">
+            <div>
+              <strong>Ana Oliveira</strong>
+              <span>Iniciante</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contact">
+    <div class="container">
+      <h2>Fale <span class="accent">Conosco</span></h2>
+      <p class="section-subtitle">Tem dúvidas ou precisa de suporte? Entre em contato</p>
+      
+      <div class="contact-content">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Seu nome" required aria-label="Seu nome">
+            <input type="email" placeholder="Seu e-mail" required aria-label="Seu e-mail">
+          </div>
+          <select aria-label="Assunto">
+            <option value="">Selecione um assunto</option>
+            <option value="suporte">Suporte Técnico</option>
+            <option value="vendas">Dúvidas sobre produtos</option>
+            <option value="parcerias">Parcerias</option>
+            <option value="outro">Outro</option>
+          </select>
+          <textarea placeholder="Sua mensagem" required aria-label="Sua mensagem"></textarea>
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+          </button>
+        </form>
+        
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fas fa-envelope accent"></i>
+            <div>
+              <h3>E-mail</h3>
+              <a href="mailto:contato@edgemachine.com">contato@edgemachine.com</a>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <i class="fas fa-phone accent"></i>
+            <div>
+              <h3>Telefone</h3>
+              <a href="tel:+5511999999999">+55 (11) 99999-9999</a>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <i class="fas fa-clock accent"></i>
+            <div>
+              <h3>Horário de Atendimento</h3>
+              <p>Seg-Sex: 9h às 18h</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h3>Redes Sociais</h3>
+            <div class="social-icons">
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/gustavodomenico-cd/edgemachine" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Perguntas <span class="accent">Frequentes</span></h2>
+      
+      <div class="faq-accordion">
+        <div class="accordion-item">
+          <button class="accordion-button" aria-expanded="false">
+            <span>Preciso ter experiência em trading para usar os robôs?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Não necessariamente. Nossos robôs são projetados para operar de forma autônoma, especialmente a versão Automático Completo. Além disso, fornecemos o ebook gratuito e tutoriais para ajudar iniciantes.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button" aria-expanded="false">
+            <span>Quanto capital mínimo é necessário para começar?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Recomendamos pelo menos R$ 2.000,00 para operar com segurança e aplicar uma gestão de risco adequada. Porém, isso varia conforme a estratégia escolhida.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-button" aria-expanded="false">
+            <span>Os robôs funcionam com qualquer corretora?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content">
+            <p>Atualmente temos integração direta com as principais corretoras do mercado brasileiro e internacional. Consulte nossa lista completa na seção de Robôs/Algoritmos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <span class="logo-accent">EDGE</span> MACHINE
+          </div>
+          <p>Algoritmos de trading automatizado com precisão científica. Opere 24/7 com estratégias testadas e comprovadas.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#robos">Robôs/Algoritmos</a></li>
+            <li><a href="#ebook">Ebook Gratuito</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Isenção de Responsabilidade</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Receba insights e atualizações sobre trading algorítmico.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu e-mail" aria-label="Seu e-mail para newsletter">
+            <button type="submit" aria-label="Assinar newsletter">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 EDGE MACHINE. Todos os direitos reservados.</p>
+        <div class="footer-payments">
+          <i class="fab fa-cc-visa" aria-hidden="true"></i>
+          <i class="fab fa-cc-mastercard" aria-hidden="true"></i>
+          <i class="fab fa-cc-paypal" aria-hidden="true"></i>
+          <i class="fab fa-bitcoin" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão do Tema Flutuante -->
+  <div class="theme-float">
+    <button id="theme-toggle" aria-label="Alternar tema claro/escuro">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <!-- Botão de Voltar ao Topo -->
+  <button id="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

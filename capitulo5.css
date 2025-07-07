@@ -1,0 +1,162 @@
+/* Estilos para a seção de Pilares Macroeconômicos */
+.pillars-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--bg-tertiary);
+}
+
+.pillar:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pillar h5 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--accent-light);
+}
+
+.pillar ul {
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+
+.pillar li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pillar-footer {
+  background: rgba(255, 215, 0, 0.05);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-top: 15px;
+}
+
+.source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px !important;
+}
+
+.source-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0 !important;
+}
+
+.impact-box {
+  border-left: 3px solid var(--accent);
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
+.scenario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.scenario i {
+  font-size: 1.1rem;
+}
+
+.scenario.good {
+  background: rgba(40, 167, 69, 0.1);
+  border-left: 3px solid #28a745;
+}
+
+.scenario.bad {
+  background: rgba(220, 53, 69, 0.1);
+  border-left: 3px solid #dc3545;
+}
+
+.pillar-connection {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--text-secondary);
+  position: relative;
+  padding-top: 20px;
+}
+
+.pillar-connection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+@media (max-width: 768px) {
+  .pillar h5 {
+    font-size: 1.2rem;
+  }
+  
+  .source-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+/* Estilos adicionais para a seção expandida */
+.pillars-box p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.connection-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.connection-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pillar small {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 10px;
+}
+
+.impact-box ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.impact-box li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
